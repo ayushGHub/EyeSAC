@@ -21,25 +21,23 @@ python upload_data.py
 
 ## Constraints:
 1.	Uploaded CSV file and video names:
--	Should be unique
--	Should not contain underscores (_)
--	Data files: Should not contain hyphens (-)
+	-	Should be unique
+	-	Should not contain underscores (_)
+	-	Data files: Should not contain hyphens (-)  
 Reason: Row ID’s = “<prefix>_”+<file_name> (Therefore, file name obtained by split by _)
       [For video blocks, timeframe labels, add tag labels, combine video labels]
 	 Same data_filename will be used in screen video name (Split by -)
 2.	File names for screen video:
--	screen-<player1_data_filename>-<player1_data_filename>.mp4
+	-	screen-<player1_data_filename>-<player1_data_filename>.mp4
 Reason: To make line chart for appropriate players
 3.	Screen video aspect ratio should be 16:9 (width:height)
 Reason: Line chart margins and dimensions are set as per video’s aspect ratio
 4.	File names for player video:
--	player-<player_name>.mp4
+	-	player-<player_name>.mp4
 Reason: Identify player videos and get starting frame number to offset for heatmap 
 5.	For heatmap:
-a.	Frame number from which heatmap starts = Minimum start time set amongst all player videos * fps
-b.	Total number of frames in the heatmap = Minimum video duration amongst all player videos * fps
-	
-
+	-	Frame number from which heatmap starts = Minimum start time set amongst all player videos * fps
+	-	Total number of frames in the heatmap = Minimum video duration amongst all player videos * fps
 Feedbacks, feature requests, and contribution are welcome!
 
 ## Contributions:
