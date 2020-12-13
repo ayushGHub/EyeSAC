@@ -24,17 +24,17 @@ python upload_data.py
 	-	Should be unique
 	-	Should not contain underscores (_)
 	-	Data files: Should not contain hyphens (-)  
-Reason: Row ID’s = “<prefix>_”+<file_name> (Therefore, file name obtained by split by _)
-      [For video blocks, timeframe labels, add tag labels, combine video labels]
+	*_Reason:_* Row ID’s = “<prefix>_”+<file_name> (Therefore, file name obtained by split by _)  
+      [For video blocks, timeframe labels, add tag labels, combine video labels]  
 	 Same data_filename will be used in screen video name (Split by -)
 2.	File names for screen video:
-	-	screen-<player1_data_filename>-<player1_data_filename>.mp4
-Reason: To make line chart for appropriate players
-3.	Screen video aspect ratio should be 16:9 (width:height)
-Reason: Line chart margins and dimensions are set as per video’s aspect ratio
-4.	File names for player video:
-	-	player-<player_name>.mp4
-Reason: Identify player videos and get starting frame number to offset for heatmap 
+	-	screen-<player1_data_filename>-<player1_data_filename>.mp4  
+	*_Reason:_* To make line chart for appropriate players
+3.	File names for player video:
+	-	player-<player_name>.mp4  
+	*_Reason:_* Identify player videos and get starting frame number to offset for heatmap 
+4. 	Screen video aspect ratio should be 16:9 (width:height)  
+	*_Reason:_* Line chart margins and dimensions are set as per video’s aspect ratio
 5.	For heatmap:
 	-	Frame number from which heatmap starts = Minimum start time set amongst all player videos * fps
 	-	Total number of frames in the heatmap = Minimum video duration amongst all player videos * fps
