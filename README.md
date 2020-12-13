@@ -39,5 +39,17 @@ Reason: Identify player videos and get starting frame number to offset for heatm
 a.	Frame number from which heatmap starts = Minimum start time set amongst all player videos * fps
 b.	Total number of frames in the heatmap = Minimum video duration amongst all player videos * fps
 	
+
+Feedbacks, feature requests, and contribution are welcome!
+
+## Contributions:
+[@ayushGHub](https://github.com/ayushGHub)  
+[@melitasaldanha](https://github.com/melitasaldanha)  
+[@debeshm](https://github.com/debeshm)
+
 ## Citation:
 1. Kumar, Ayush, et al. "Demo of the EyeSAC System for Visual Synchronization, Cleaning, and Annotation of Eye Movement Data." ACM Symposium on Eye Tracking Research and Applications. 2020
+
+## Acknowledgments
+Funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – Project-ID 251654672 – TRR 161 (Project B01),
+SUNY Korea’s ICTCCP (IITP-2020-2011-1-00783) supervised by the IITP and NSF grant IIS 1527200.
