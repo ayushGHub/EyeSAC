@@ -38,6 +38,7 @@ python upload_data.py
 5.	For heatmap:
 	-	Frame number from which heatmap starts = Minimum start time set amongst all player videos * fps
 	-	Total number of frames in the heatmap = Minimum video duration amongst all player videos * fps
+
 Feedbacks, feature requests, and contribution are welcome!
 
 ## Contributions:
