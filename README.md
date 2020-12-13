@@ -2,7 +2,7 @@
 An Interactive Visual Synchronization, Analysis and Cleaning Framework for Eye Movement Data
 
 
-![alt text](https://github.com/ayushGHub/EyeSAC/blob/master/teaser.JPG)
+![alt text](https://github.com/ayushGHub/EyeSAC/blob/main/teaser.JPG)
 
 ## Instructions to run:
 1.	Open Chrome with disabled security (Due to CORS error): 
