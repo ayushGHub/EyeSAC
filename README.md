@@ -43,9 +43,9 @@ b.	Total number of frames in the heatmap = Minimum video duration amongst all pl
 Feedbacks, feature requests, and contribution are welcome!
 
 ## Contributions:
-[@ayushGHub](https://github.com/ayushGHub)  
-[@melitasaldanha](https://github.com/melitasaldanha)  
-[@debeshm](https://github.com/debeshm)
+[Ayush Kumar](https://github.com/ayushGHub)  
+[Melita Saldanha](https://github.com/melitasaldanha)  
+[Debesh Mohanty](https://github.com/debeshm)
 
 ## Citation:
 1. Kumar, Ayush, et al. "Demo of the EyeSAC System for Visual Synchronization, Cleaning, and Annotation of Eye Movement Data." ACM Symposium on Eye Tracking Research and Applications. 2020
