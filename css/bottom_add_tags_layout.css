@@ -1,0 +1,77 @@
+#add_tags_layout {
+  position: relative;
+  display: inline-block;
+  width: 95%;
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
+}
+
+.add_tag_row {
+  position: relative;
+  width: 100%;
+  height: 24%;
+  float: left;
+}
+
+.add_tag_remove_button {
+  position: relative;
+  display: block;
+  width: 0.5%;
+  float: left;
+  padding: 0.65% 0.5% 0.35% 0.5%;
+}
+
+.add_tag_label {
+  position: relative;
+  display: block;
+  width: 9.5%;
+  height: 99%;
+  float: left;
+  margin: 0.1% 0%;
+}
+
+.add_tag_label input:focus {
+    outline: none;
+}
+
+.add_tag_cursor {
+  position: relative;
+  display: block;
+  width: 87%;
+  height: 90%;
+  float: left;
+  margin: 0.35% 0%;
+
+}
+
+.tag_cursor {
+  position: relative;
+  display: block;
+  width: 9.5%;
+  height: 90%;
+  float: left;
+  background: #4682b4; /*Tag color*/
+  border: 'white';
+  text-align: center;
+  padding: 1px;
+  float: left;
+  border-radius: 10px !important;
+}
+
+.tag_cursor__close_button{
+  display: inline-block;
+  cursor: pointer;
+  color: #293542;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.add_tag_add_button {
+  position: relative;
+  display: block;
+  width: 2.1%;
+  float: left;
+}

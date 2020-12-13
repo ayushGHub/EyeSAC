@@ -1,0 +1,51 @@
+#center_videos {
+  position: relative;
+  display: block;
+  width: 48%;
+  height: 99%;
+  float: left;
+  padding: 0.3%;
+  overflow-y: auto;
+  border: 2px solid white;
+  margin: 0% 1% 0% 1%;
+}
+
+.video_block {
+  position: relative;
+  float: left;
+  width: 44%;
+  height: 44%;
+  margin: 1.3% 3% 1.3% 3%;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #4682b4;
+  border-radius: 10px;
+  display: block;
+}
+
+.video:focus {
+    outline: none;
+}
+
+.line_chart {
+  display: block;
+  position: absolute;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+/* Line chart color*/
+
+.dot1 {
+  fill: #0077ff;
+  stroke: #fff;
+}
+
+.dot2 {
+  fill: #ffab00;
+  stroke: #fff;
+}

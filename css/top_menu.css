@@ -1,0 +1,70 @@
+#top_menu {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 8%;
+  color: white;
+  background-color: black;
+  margin-top: 0%;
+}
+
+#upload_files {
+  width: 30%;
+  height: 100%;
+  background-color: inherit;
+  color: white;
+  float: left;
+}
+
+#upload_files li {
+  width: 50%;
+  height: 100%;
+  float: left;
+  list-style-type: none;
+  background-color: inherit;
+  padding: 0.3% 2% 0.3% 1%;
+  font-size: 1.8vh; /* 70% */
+}
+
+#upload_files li input {
+  width: 100%;
+  font-size: 1.8vh; /* 100% */
+  background-color: #A3E4F4; /* blue */
+  color: black;
+}
+
+#header {
+  display: block;
+  position: relative;
+  width: 40%;
+  padding: 1%;
+  float: left;
+  font-size: 2.5vh; /* 110% */
+}
+
+#header span {
+  vertical-align: middle;
+}
+
+#header #abbr {
+  color: white;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+#top_menu_buttons {
+  width: 20%;
+  height: 100%;
+  background-color: inherit;
+  float: right;
+}
+
+#top_menu_buttons li {
+  width: 50%;
+  height: 100%;
+  height: inherit;
+  float: left;
+  list-style-type: none;
+  background-color: inherit;
+  padding: 4%;
+}

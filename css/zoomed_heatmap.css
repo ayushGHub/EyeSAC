@@ -1,0 +1,115 @@
+#zoomed_heatmap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 46%;
+  border: 2px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2%;
+}
+
+#zoomed_timeframe_svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+#zooomed_heatmap_container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0%;
+  padding: 0%;
+}
+
+.zoomed_timeframe_heatmap {
+  width: 100%;
+  height: 25%;
+  font-size: 1.8vh; /* 100% */
+  float: left;
+  /* background-color: white; */
+}
+
+.zoomed_heatmap_svg {
+  display: block;
+  margin: 0%;
+  padding: 0%;
+}
+
+.zoomed_svg_g {
+  display: block;
+  margin: 0%;
+  padding: 0%;
+}
+
+.zoomed_grid {
+  margin: 0%;
+  padding: 0%;
+}
+
+
+/* Zoomed Timeline */
+#zoomed_timeframe_timeline {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 20%;
+}
+
+.zoomed_ticks {
+  font: 1.5vh sans-serif; /* 60% sans-serif */
+}
+
+.zoomed_track,
+.zoomed_track-inset,
+.zoomed_track-overlay {
+  stroke-linecap: round;
+}
+
+.zoomed_track {
+  stroke-opacity: 0.3;
+  stroke-width: 1%;
+}
+
+.zoomed_track-inset {
+  stroke: rgb(240, 87, 26);
+  stroke-width: 1%;
+}
+
+.zoomed_track-overlay {
+  pointer-events: stroke;
+  stroke-width: 1500px;
+  stroke: transparent;
+  cursor: crosshair;
+}
+
+.zoomed_handle {
+  fill: rgb(9, 49, 109);
+  stroke: rgb(255, 255, 255);
+  stroke-opacity: 1;
+  stroke-width: 1px;
+}
+
+
+/* Bottom Arrow */
+#bottom_arrow {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3%;
+  text-decoration: none;
+}
+
+#bottom_arrow img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  text-decoration: none;
+}

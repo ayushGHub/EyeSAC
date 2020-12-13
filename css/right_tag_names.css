@@ -1,0 +1,48 @@
+#right_tag_names {
+  position: relative;
+  width: 10%;
+  height: 99%;
+  float: left;
+  padding: 0.3%;
+  overflow-y: auto;
+}
+
+.tag_highlight_button {
+  position: relative;
+  width: 100%;
+  height: 12.5%;
+}
+
+.tag_highlight_button input {
+  width: 90%;
+  height: 96%;
+  margin: 2% 5%;
+}
+
+.tag_highlight_button input::-webkit-input-placeholder {
+  color: grey;
+}
+
+.tag_highlight_button input:hover {
+  background-color: #4682b4;
+  border-color: white;
+  cursor: pointer;
+}
+
+.tag_highlight_button input:hover::-webkit-input-placeholder {
+  color: white;
+}
+
+.tag_highlight_button input.active {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+.tag_highlight_button input.active::-webkit-input-placeholder {
+  color: white;
+}
+
+.tag_highlight_button input:focus {
+    outline: none;
+}

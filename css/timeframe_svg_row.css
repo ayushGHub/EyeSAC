@@ -1,0 +1,91 @@
+#timeframe_svg_row {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-height: 66.67%;
+  overflow-y: scroll;
+  border: 2px solid white;
+}
+
+/* Label Row */
+.timeframe_label_row {
+  width: 100%;
+  height: 25%;
+  font-size: 3vh; /* 100% */
+  float: left;
+}
+
+.timeframe_label {
+  position: relative;
+  display: block;
+  width: 14%;
+  height: 100%;
+  float: left;
+  margin-left: 1%;
+}
+
+/* Dropdown Row */
+.timeframe_dropdown_row {
+  height: 25%;
+  width: 100%;
+  font-size: 3vh; /* 100% */
+  float: left;
+}
+
+.timeframe_dropdown_remove_button {
+  position: relative;
+  display: block;
+  width: 0.5%;
+  height: 95%;
+  float: left;
+  padding: 0.5% 0.2% 0.5% 0.8%;
+}
+
+.timeframe_dropdown {
+  position: relative;
+  display: block;
+  width: 14%;
+  height: 100%;
+  float: left;
+  text-decoration: none;
+}
+
+
+/* Common elements */
+.timeframe_heatmap {
+  display: block;
+  width: 82.6%;
+  height: 100%;
+  float: left;
+  margin-right: 2.4%;
+  /* background-color: white; */
+}
+
+.heatmap_svg {
+  display: block;
+  margin: 0%;
+  padding: 0%;
+}
+
+
+
+/* Tag highlighter*/
+#highlighter_container {
+  position: absolute;
+  float: left;
+  width: 81.1%;
+  margin-left: 14.9%;
+  margin-right: 4%;
+  margin-top: 0.1%;
+  z-index: 1;
+}
+
+.highlighter {
+  position: absolute;
+  float: left;
+  width: 50%;
+  height: 100%;
+  margin-left: 0%;
+  opacity: 0.6;
+  background-color: white;
+}

@@ -1,0 +1,68 @@
+#combine_video_layout {
+  position: relative;
+  display: none;
+  width: 95%;
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
+}
+
+.combine_video_row {
+  position: relative;
+  width: 100%;
+  height: 25%;
+  float: left;
+}
+
+.combine_video_label {
+  position: relative;
+  display: block;
+  width: 10.5%;
+  height: 99%;
+  float: left;
+  margin: 0.1% 0%;
+}
+
+.combine_video_label input:focus {
+  outline: none;
+}
+
+.combine_video_cursor {
+  position: relative;
+  display: block;
+  width: 87%;
+  height: 90%;
+  float: left;
+  margin: 0.3% 0%;
+}
+
+.video_cursor {
+  position: relative;
+  display: block;
+  width: 9.5%;
+  height: 90%;
+  margin: 0.1% 0%;
+  background: #4682b4; /*Tag color*/
+  border: 'white';
+  text-align: center;
+  padding: 1px;
+  float: left;
+  border-radius: 10px !important;
+}
+
+.video_cursor__close_button{
+  display: inline-block;
+  cursor: pointer;
+  color: #293542;
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-50%);
+}
+
+.combine_video_add_button {
+  position: relative;
+  display: block;
+  width: 2.1%;
+  float: left;
+}

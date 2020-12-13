@@ -1,0 +1,30 @@
+#bottom_layout {
+  position: relative;
+  width: 100%;
+  height: 16%;
+  float: left;
+  border: 2px solid white;
+}
+
+#toggle_buttons {
+  position: relative;
+  display: inline-block;
+  width: 5%;
+  height: 100%;
+  float: left;
+}
+
+#toggle_buttons .button {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 42%;
+  float: left;
+  margin: 4% 0%;
+  font-size: 1.8vh; /* 70% */
+}
+
+#toggle_buttons .button.active {
+  background-color: black;
+  color: white;
+}

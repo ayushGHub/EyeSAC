@@ -1,0 +1,85 @@
+#timeframe_manual_noise_removal_row {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 12.5%;
+}
+
+#manual_noise_removal_remove_button {
+  position: relative;
+  display: block;
+  width: 0.5%;
+  height: 95%;
+  float: left;
+  padding: 0.5% 0.2% 0.5% 0.8%;
+}
+
+#manual_noise_removal_label {
+  position: relative;
+  display: block;
+  width: 13.9%;
+  height: 100%;
+  float: left;
+}
+
+#manual_noise_removal_cursor {
+  position: relative;
+  display: block;
+  width: 81.3%;
+  height: 90%;
+  float: left;
+  margin: 0.35% 0%;
+}
+
+.noise_removal_cursor {
+  position: relative;
+  display: block;
+  width: 9.5%;
+  height: 90%;
+  background: #4682b4;  /*Tag color*/
+  border: 'white';
+  text-align: center;
+  padding: 1px;
+  float: left;
+  border-radius: 10px !important;
+}
+
+.noise_removal_cursor__close_button {
+  display: inline-block;
+  cursor: pointer;
+  color: #293542;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+#manual_noise_removal_add_button {
+  position: relative;
+  display: block;
+  width: 2%;
+  float: left;
+}
+
+#manual_noise_removal_clear_button {
+  position: relative;
+  display: block;
+  width: 0.5%;
+  height: 100%;
+  float: left;
+  margin-left: 0.2%;
+
+}
+
+#manual_noise_removal_clear_button input:focus {
+    outline: none;
+}
+
+#manual_noise_removal_clear_button i {
+  background-color: white;
+  color: #4682b4;
+  border-color: #4d4d4d;
+  border-radius: 100%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}

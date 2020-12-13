@@ -1,0 +1,80 @@
+#stats {
+  width: 100%;
+  height: 48%;
+  margin-bottom: 1%;
+  border: 2px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#stats_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  overflow: auto;
+}
+
+#stats table {
+  width: 100%;
+  height: 100%;
+  border-spacing: 0px;
+}
+
+#stats tr{
+  width: 100%;
+  font-size: 1.9vh; /* 85% */
+}
+
+#stats th {
+  width: 50%;
+  background-color: #4682b4;
+  color: white;
+  text-align: center;
+}
+
+#stats td {
+  width: 50%;
+  text-align:center;
+  margin: 0%;
+  padding: 0%;
+}
+
+#noise_threshold_text {
+  width: 40%;
+  height: 85%;
+  font-size: 1.9vh; /* 90% */
+  text-align: center;
+  margin-left: 10%;
+}
+
+#noise_threshold_text input:focus {
+    outline: none;
+}
+
+#noise_threshold_update_button {
+  width: 40%;
+  height: 85%;
+  font-size: 1.8vh; /* 80% */
+  border: 1px solid white;
+  background-color: #4682b4;
+  color: white;
+}
+
+#noise_threshold_update_button:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  cursor: pointer;
+}
+
+#noise_threshold_text:read-only {
+  background-color: #787878;
+  cursor: not-allowed;
+}
+
+#noise_threshold_update_button:disabled {
+  background-color: black;
+  color: #666666;
+  cursor: not-allowed;
+}
