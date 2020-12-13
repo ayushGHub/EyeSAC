@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Eye Tracking Data Analytics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/top_menu.css">
+  <link rel="stylesheet" href="css/left_menu.css">
+  <link rel="stylesheet" href="css/center_videos.css">
+  <link rel="stylesheet" href="css/statistics.css">
+  <link rel="stylesheet" href="css/zoomed_heatmap.css">
+  <link rel="stylesheet" href="css/right_tag_names.css">
+  <link rel="stylesheet" href="css/timeframe_svg_row.css">
+  <link rel="stylesheet" href="css/timeframe_manual_noise_removal_row.css">
+  <link rel="stylesheet" href="css/timeframe_timeline_row.css">
+  <link rel="stylesheet" href="css/bottom_layout.css">
+  <link rel="stylesheet" href="css/bottom_add_tags_layout.css">
+  <link rel="stylesheet" href="css/bottom_combine_video_layout.css">
+
+</head>
+<body>
+
+  <div id="spinner">
+    <div id="loader"></div>
+  </div>
+
+  <div id="top_menu">
+  	<ul id="upload_files">
+      <li>
+      <span class="top_menu_label">Upload Data</span>
+        <input type="file" id="uploadData" multiple/>
+      </li>
+    	<li>
+        <span class="top_menu_label">Upload Videos</span>
+        <input type="file" id="uploadVideos" multiple />
+      </li>
+    </ul>
+
+    <div id="header" align="center">
+       <span id="abbr"> EyeSAC </span>
+    </div>
+
+    <ul id="top_menu_buttons">
+      <li>
+        <button class="button" onclick="visualize()">Visualize</button>
+      </li>
+      <li>
+        <button class="button button_enable_disable" onclick="exportData()" id="export_data">Export Data</button>
+      </li>
+    </ul>
+  </div>
+
+  <div id="center_display">
+    <div id="left_menu">
+      <button class="button" onclick="set_start()">Set Start Point</button>
+      <button class="button button_enable_disable" onclick="play_all()">Play All</button>
+      <button class="button button_enable_disable" onclick="pause_all()">Pause All</button>
+      <button class="button button_enable_disable" onclick="clean_noise_throughout()">Clean Noise Throughout</button>
+      <button class="button button_enable_disable" onclick="add_manual_noise_removal()">Add Manual Noise Removal</button>
+      <button class="button button_enable_disable" onclick="add_tag()">Add Tag</button>
+      <button class="button button_enable_disable" onclick="combine_video()">Combine Video</button>
+      <button class="button button_enable_disable" onclick="add_visualization()">Add Visualization </button>
+    </div>
+
+    <div id="center_videos">
+
+      <div class="video_block" id="video_block_0">
+        <div class="line_chart"></div>
+        <video class="video" src="" controls></video>
+      </div>
+
+
+    </div>
+
+    <div id="right_details">
+      <div id="stats">
+        <div id="stats_container">
+					<table>
+						<tr>
+              <th>Category</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>Total Frames</td>
+              <td id="stats_total_frames"></td>
+            </tr>
+						<tr class="stats_player_missing">
+              <td class="stats_table_col1">Player 1: Missing</td>
+              <td class="stats_table_col2"></td>
+            </tr>
+						<tr>
+              <td>Noise Threshold</td>
+              <td>
+                <input id="noise_threshold_text" type="number" oninput="validateFloat(this)">
+                <input id="noise_threshold_update_button" type="button" value="Update" onclick="updateNoiseThreshold(this)">
+              </td>
+            </tr>
+						<tr class="stats_player_noise">
+              <td class="stats_table_col1">Player 1: Noise</td>
+              <td class="stats_table_col2"></td>
+            </tr>
+					</table>
+        </div>
+			</div>
+
+      <div id="zoomed_heatmap">
+
+          <div id="zoomed_timeframe_svg">
+            <div id="zooomed_heatmap_container">
+              <div class="zoomed_timeframe_heatmap" id="zoomed_timeframe_heatmap_none"></div>
+            </div>
+          </div>
+
+          <div id="zoomed_timeframe_timeline">
+
+          </div>
+
+      </div>
+
+      <div id="bottom_arrow">
+        <img align="center" src="images/down_arrow.png"/>
+      </div>
+
+    </div>
+
+    <div id="right_tag_names">
+
+      <div class="tag_highlight_button" id="tag_button_0">
+        <input class="label" placeholder="Tag Name" onclick="highlight_button_clicked(this)" readonly/>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="center_timeframe_layout">
+
+    <div id="timeframe_manual_noise_removal_row">
+
+      <div id="manual_noise_removal_remove_button">
+        <i class="cross fa" onclick="remove_manual_noise_removal_row()">&#10060;</i>
+      </div>
+
+      <div id="manual_noise_removal_label">
+        <span class="label">Manual Noise Removal</span>
+      </div>
+
+      <div id="manual_noise_removal_cursor">
+        <div class="noise_removal_cursor" style="display: none">
+          <i class="noise_removal_cursor__close_button white-segment-icon fa fa-times" onclick="remove_manual_noise_cursor(this)"></i>
+        </div>
+      </div>
+
+      <div id="manual_noise_removal_add_button">
+        <i class="plus fa" onclick="add_manual_noise_removal_cursor(this)">&#xf067;</i>
+      </div>
+
+      <div id="manual_noise_removal_clear_button">
+        <i class="fas" onclick="clean_noise_manually()">&#xf138;</i>
+      </div>
+
+    </div>
+
+    <div id="highlighter_container">
+      <div class="highlighter"></div>
+    </div>
+
+    <div id="timeframe_svg_row">
+
+      <div class="timeframe_label_row" id="timeframe_label_0">
+
+        <div class="timeframe_label">
+          <span class="label"></span>
+        </div>
+
+        <div class="timeframe_heatmap"></div>
+
+      </div>
+
+      <div class="timeframe_dropdown_row">
+
+        <div class="timeframe_dropdown_remove_button">
+          <i class="cross fa" onclick="remove_timeframe_dropdown_row(this)">&#10060;</i>
+        </div>
+
+        <div class="timeframe_dropdown">
+          <select class="label" onchange="updateVisualizationHeatmap(this, 'dropdown')"></select>
+        </div>
+
+        <div class="timeframe_heatmap" id="dropdown_heatmap_0"></div>
+
+      </div>
+
+    </div>
+
+    <div id="timeframe_timeline_row">
+
+      <div id="timeline_tooptip">
+        <span class="label"></span>
+      </div>
+
+      <div id="timeframe_timeline"></div>
+
+      <div id="timeline_previous_frame">
+        <i class="fas" onclick="timeline_goto_previous_frame()">&#xf137;</i>
+      </div>
+
+      <div id="timeline_next_frame">
+        <i class="fas" onclick="timeline_goto_next_frame()">&#xf138;</i>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="bottom_layout">
+
+    <div id="toggle_buttons">
+      <button class="button active" id="view_tags_btn" onclick="view_tags(this)">View Tags</button>
+      <button class="button" id="view_combine_video_btn" onclick="view_combine_video(this)">Combine Video</button>
+    </div>
+
+    <div id="add_tags_layout">
+
+      <div class="add_tag_row" id="tag_label_0">
+
+        <div class="add_tag_remove_button">
+          <i class="cross fa" onclick="remove_tag(this)">&#10060;</i>
+        </div>
+
+        <div class="add_tag_label">
+          <input class="label" contenteditable="true" placeholder="Tag Name" onkeyup="change_button_value(this)"/>
+        </div>
+
+        <div class="add_tag_cursor">
+          <div class="tag_cursor" style="display: none">
+          <i class="tag_cursor__close_button white-segment-icon fa fa-times" onclick="remove_tag_cursor(this)"></i>
+          </div>
+        </div>
+
+        <div class="add_tag_add_button">
+          <i class="plus fa" onclick="add_tag_cursor(this)">&#xf067;</i>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="combine_video_layout">
+
+      <div class="combine_video_row" id="combine_video_0">
+        <div class="combine_video_label">
+          <input class="label" readonly></input>
+        </div>
+
+        <div class="combine_video_cursor">
+          <div class="video_cursor" style="display: none">
+            <i class="video_cursor__close_button white-segment-icon fa fa-times" onclick="remove_video_cursor(this)"></i>
+          </div>
+        </div>
+
+        <div class="combine_video_add_button">
+          <i class="plus fa" onclick="add_combine_video_cursor(this)">&#xf067;</i>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://rawgit.com/allensarkisyan/VideoFrame/master/VideoFrame.min.js"></script>
+
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/top_menu.js"></script>
+  <script type="text/javascript" src="js/left_menu.js"></script>
+  <script type="text/javascript" src="js/center_videos.js"></script>
+  <script type="text/javascript" src="js/statistics.js"></script>
+  <script type="text/javascript" src="js/zoomed_heatmap.js"></script>
+  <script type="text/javascript" src="js/right_tag_names.js"></script>
+  <script type="text/javascript" src="js/timeframe_svg_row.js"></script>
+  <script type="text/javascript" src="js/timeframe_manual_noise_removal_row.js"></script>
+  <script type="text/javascript" src="js/timeframe_timeline_row.js"></script>
+  <script type="text/javascript" src="js/bottom_layout.js"></script>
+  <script type="text/javascript" src="js/bottom_add_tags_layout.js"></script>
+  <script type="text/javascript" src="js/bottom_combine_video_layout.js"></script>
+</body>
+</html>
