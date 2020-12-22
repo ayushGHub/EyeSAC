@@ -64,8 +64,11 @@ function remove_timeframe_dropdown_row(node) {
   // Remove visualization row from zoomed heatmap
   removeZoomedVisualizationRow("zoomed_timeframe_heatmap_" + zoomed_heatmap_id);
 
+  // Set vertical line height
+  document.querySelector('#vertical_line_container').style.height = (document.getElementById('timeframe_svg_row').getBoundingClientRect().height - 4)+"px";
+
   // Set highlighter height
-  document.querySelector('#highlighter_container').style.height = ((document.querySelector('#timeframe_svg_row').clientHeight)*1.02)+"px";
+  document.querySelector('#highlighter_container').style.height = (document.getElementById('timeframe_svg_row').getBoundingClientRect().height - 4)+"px";
 }
 
 // Draw HeatMap for each player

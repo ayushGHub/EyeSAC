@@ -27,12 +27,15 @@ function add_tag_cursor(add_node){
   cursor_node.parentNode.insertBefore(copy, cursor_node);
   cursor_node.style.display = "inline-block";
 
-
-  $('.tag_cursor').resizable({
-            grid: [1, 10000]
+  $(".tag_cursor").draggable({axis:"x", containment:"parent"});
+  $(".tag_cursor").each(function() {
+      var $this = $(this);
+      $this.resizable({
+          grid: [1, 10000],
+          containment: "parent",
+          handles: { 's': $this.find("div.ui-resizable-handle") }
+      });
   });
-  $('.tag_cursor').draggable({axis:"x", containment:"parent"});
-
 }
 
 function remove_tag_cursor(node){

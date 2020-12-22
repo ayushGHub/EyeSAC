@@ -68,9 +68,6 @@ function set_start() {
           document.querySelector('#center_timeframe_layout').style.display = "inline-block";
           document.querySelector('#bottom_layout').style.display = "inline-block";
 
-          // Set highlighter height
-          document.querySelector('#highlighter_container').style.height = ((document.querySelector('#timeframe_svg_row').clientHeight)*1.02)+"px";
-
           // Enable buttons
           node_enable_disable = $('.button_enable_disable');
           for(i=0; i<node_enable_disable.length; i++)
@@ -83,6 +80,12 @@ function set_start() {
           // View heatmap timeline and zoomed
           viewTimeline(total_frames);
           viewZoomedTimeline();
+
+          // Set vertical line height
+          document.querySelector('#vertical_line_container').style.height = (document.getElementById('timeframe_svg_row').getBoundingClientRect().height - 4)+"px"; // 1.03
+
+          // Set highlighter height
+          document.querySelector('#highlighter_container').style.height = (document.getElementById('timeframe_svg_row').getBoundingClientRect().height - 4)+"px";
 
           // Hide Spinner
           document.getElementById("spinner").style.display = "none";
@@ -189,6 +192,9 @@ function add_manual_noise_removal() {
     });
     $('.noise_removal_cursor').draggable({axis:"x", containment:"parent"});
 
+    // Change top margin of vertical line
+    document.querySelector('#vertical_line_container').style.marginTop = "0.7%"; // 0.3%
+
     // Change top margin of highlighter
     document.querySelector('#highlighter_container').style.marginTop = "0.7%";
   }
@@ -221,14 +227,20 @@ function add_tag() {
   node.parentNode.insertBefore(copy, node);
   node.style.display = "inline-block";
 
-
-
-
-  $('.tag_cursor').resizable({
-            grid: [1, 10000]
+  $(".tag_cursor").draggable({axis:"x", containment:"parent"});
+  $(".tag_cursor").each(function() {
+      var $this = $(this);
+      $this.resizable({
+          grid: [1, 10000],
+          containment: "parent",
+          handles: { 's': $this.find("div.ui-resizable-handle") }
+      });
   });
-  $('.tag_cursor').draggable({axis:"x", containment:"parent"});
 }
+
+$('.tag_cursor').resizable({
+      grid: [1, 10000]
+});
 
 function add_visualization() {
   // Get timeframe_dropdown_row
@@ -255,6 +267,9 @@ function add_visualization() {
   data_name = select_node.options[select_node.selectedIndex].text;
   addZoomedVisualizationRow("zoomed_timeframe_heatmap_"+last_count, select_node.value, data_name);
 
+  // Set vertical line height
+  document.querySelector('#vertical_line_container').style.height = (document.getElementById('timeframe_svg_row').getBoundingClientRect().height - 4)+"px"; // 1.03
+
   // Set highlighter height
-  document.querySelector('#highlighter_container').style.height = ((document.querySelector('#timeframe_svg_row').clientHeight)*1.02)+"px";
+  document.querySelector('#highlighter_container').style.height = (document.getElementById('timeframe_svg_row').getBoundingClientRect().height - 4)+"px"; // 1.02
 }
