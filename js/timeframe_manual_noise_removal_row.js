@@ -7,6 +7,9 @@ function remove_manual_noise_removal_row() {
   // Hide  entire add_tag_row
   document.querySelector('#timeframe_manual_noise_removal_row').style.display = "none";
 
+  // Change top margin of vertical line
+  document.querySelector('#vertical_line_container').style.marginTop = "0.1%";
+
   // Change top margin of highlighter
   document.querySelector('#highlighter_container').style.marginTop = "0.1%";
 }
@@ -18,11 +21,20 @@ function add_manual_noise_removal_cursor(add_node){
   cursor_node.parentNode.insertBefore(copy, cursor_node);
   cursor_node.style.display = "inline-block";
 
-  $('.noise_removal_cursor').resizable({
-            grid: [1, 10000]
+  $('.noise_removal_cursor').each(function() {
+      var $this = $(this);
+      $this.resizable({
+          grid: [1, 10000],
+          containment: "parent",
+          handles: { 's': $this.find("div.ui-resizable-handle") }
+      });
   });
   $('.noise_removal_cursor').draggable({axis:"x", containment:"parent"});
 }
+
+$('.noise_removal_cursor').resizable({
+    grid: [1, 10000]
+});
 
 function remove_manual_noise_cursor(node){
 

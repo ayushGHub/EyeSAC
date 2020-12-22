@@ -70,7 +70,7 @@ function viewTimeline(tf) {
 	    .attr("r", 5);
 
 	// // Display vertical line at the start
-	// vertical_line_node = document.querySelector('#vertical_line');
+	vertical_line_node = document.querySelector('#vertical_line');
 	tooltip_node = document.querySelector('#timeline_tooptip').querySelector('.label');
 
 	change_handle_value(0, "timeline_handle");
@@ -90,8 +90,8 @@ function change_handle_value(val, caller) {
 	// Change tooltip value
 	tooltip_node.innerHTML = "Frame: " + handle_value;
 
-	// // Move vertical line on heatmap
-	// vertical_line_node.style.marginLeft = parseInt(grid_width*parseInt(handle_value))+"px";
+	// Move vertical line on heatmap
+	vertical_line_node.style.marginLeft = parseInt(grid_width*parseInt(handle_value))+"px";
 
 	if(caller!="play_all_videos") {
 		// Move cursor on all videos

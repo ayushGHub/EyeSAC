@@ -46,7 +46,7 @@
 }
 
 .tag_cursor {
-  position: relative;
+  position: absolute;
   display: block;
   width: 9.5%;
   height: 90%;
