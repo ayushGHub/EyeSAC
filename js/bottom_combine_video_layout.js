@@ -23,12 +23,20 @@ function add_combine_video_cursor(add_node){
   cursor_node.parentNode.insertBefore(copy, cursor_node);
   cursor_node.style.display = "inline-block";
 
-  $('.video_cursor').resizable({
-            grid: [1, 10000]
+  $('.video_cursor').each(function() {
+      var $this = $(this);
+      $this.resizable({
+          grid: [1, 10000],
+          containment: "parent",
+          handles: { 's': $this.find("div.ui-resizable-handle") }
+      });
   });
   $('.video_cursor').draggable({axis:"x", containment:"parent"});
-
 }
+
+$('.video_cursor').resizable({
+    grid: [1, 10000]
+});
 
 function remove_video_cursor(node){
 

@@ -67,17 +67,36 @@
   padding: 0%;
 }
 
+/* Vertical line*/
+#vertical_line_container {
+  display: block;
+  position: absolute;
+  float: left;
+  width: 81.1%;
+  max-height: 66.67%;
+  margin-left: 14.9%;
+  margin-right: 4%;
+  margin-top: 2px; /* 0.1% */
+}
 
+#vertical_line {
+  display: block;
+  float: left;
+  height: 100%;
+  border-left: 1px dashed black;
+  margin-left: 0%;
+  z-index: 1;
+}
 
 /* Tag highlighter*/
 #highlighter_container {
   position: absolute;
   float: left;
   width: 81.1%;
+  max-height: 66.67%;
   margin-left: 14.9%;
   margin-right: 4%;
-  margin-top: 0.1%;
-  z-index: 1;
+  margin-top: 2px; /* 0.1% */
 }
 
 .highlighter {
@@ -88,4 +107,5 @@
   margin-left: 0%;
   opacity: 0.6;
   background-color: white;
+  z-index: 1;
 }
