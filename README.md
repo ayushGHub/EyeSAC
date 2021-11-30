@@ -1,5 +1,4 @@
-# EyeSAC
-An Interactive Visual Synchronization, Analysis and Cleaning Framework for Eye Movement Data
+# EyeSAC : An Interactive Visual Synchronization, Analysis and Cleaning Framework for Eye Movement Data
 
 
 ![alt text](https://github.com/ayushGHub/EyeSAC/blob/main/teaser.JPG)
